@@ -66,10 +66,10 @@ render(h => [h(Alpha, ["test"]), h("Beta", ["test"])]);`,
 
   Some text
   goes here
-  {...test}
 
+  {...test}
 </div>)`,
-    to: `render(h => h("div", ["test", test, " ", ...test, h("tag1"), h("tag2"), "Some text goes here"]));`,
+    to: `render(h => h("div", ["test", test, h("tag1"), h("tag2"), "Some text goes here", ...test]));`,
   },
   {
     name: 'Plain attrs',
