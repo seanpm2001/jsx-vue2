@@ -60,13 +60,13 @@ render(h => [h(Alpha, ["test"]), h("Beta", ["test"])]);`,
   {
     name: 'Combined content',
     from: `render(h => <div>
-  test{test} {...test}
+  test{test}
   <tag1 />
   <tag2 />
 
   Some text
   goes here
-
+  {...test}
 
 </div>)`,
     to: `render(h => h("div", ["test", test, " ", ...test, h("tag1"), h("tag2"), "Some text goes here"]));`,
